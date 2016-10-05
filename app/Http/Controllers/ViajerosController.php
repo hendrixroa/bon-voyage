@@ -1,86 +1,31 @@
 <?php
 
 namespace Voyage\Http\Controllers;
-
+use Illuminate\Support\Facades\Input;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 
 use Voyage\Http\Requests;
+use Voyage\Viajeros;
 
 class ViajerosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function crear(){
+    	return view('home');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function storeviajero(){
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    	$data = Input::all();
+    	$viajero = new Viajeros();
+    	$viajero->nombre = $data['nombre'];
+    	$viajero->cedula = $data['cedula'];
+    	$viajero->direccion = $data['direccion'];
+    	$viajero->telefono = $data['telefono'];
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    	if($viajero->save()){
+    		return view('home');
+    	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

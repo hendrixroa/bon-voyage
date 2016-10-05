@@ -13,4 +13,14 @@ class Viajes extends Model
 	public function viajeros(){
         return $this->belongsTo('Voyage\Viajeros');
     }
+
+    public function origen()
+    {
+        return $this->hasOne('Voyage\Origen');
+    }
+
+    public function destino()
+    {
+        return $this->hasOne('Voyage\Destino');
+    }
 }
