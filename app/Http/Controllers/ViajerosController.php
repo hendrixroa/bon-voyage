@@ -4,7 +4,7 @@ namespace Voyage\Http\Controllers;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
-
+use Response;
 use Voyage\Http\Requests;
 use Voyage\Viajeros;
 
@@ -24,8 +24,13 @@ class ViajerosController extends Controller
     	$viajero->telefono = $data['telefono'];
 
     	if($viajero->save()){
-    		return view('home');
+    		//para retornar el json
+    		return response()->json($viajero);
     	}
+      	else{
 
+        	return Response::make(Utils::renderFault("Error al realizar la operación"), 200);
+    	}
+    	
     }
 }
