@@ -13,13 +13,13 @@ class CreateDestinoTable extends Migration
      */
     public function up()
     {
-        Schema::create('destino', function (Blueprint $table) {
+        Schema::create('destinos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codigo');
             $table->string('nombre');
             $table->string('lugar');
             $table->timestamps();
-            $table->integer('viaje_id')->unsigned();
+            $table->integer('viaje_id')->unsigned()->nullable();
         });
     }
 
@@ -30,6 +30,6 @@ class CreateDestinoTable extends Migration
      */
     public function down()
     {
-        Schema::drop('destino');
+        Schema::drop('destinos');
     }
 }

@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Registrar viajero</div>
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/storeviajero') }}">
                  {{ csrf_field() }}
                     <input type="text" name="nombre" placeholder="Nombre"><br>
@@ -19,5 +19,41 @@
             </div>
         </div>
     </div>
+   <div class="row">
+       <div class="col-md-2 col-md-offset-2">
+           <a class="btn btn-primary" href="{{ url('/crearviajes') }}">Agregar viajes</a>
+       </div>
+
+       <div class="col-md-2 col-md-offset-1">
+           <a class="btn btn-primary" href="{{ url('/crearorigen') }}">Agregar Origen</a>
+       </div>
+       <div class="col-md-2 col-md-offset-1">
+           <a class="btn btn-primary" href="{{ url('/creardestino') }}">Agregar Destino</a>
+       </div>
+   </div><br>
+
+   <div class="row">
+       <div class="col-md-2 col-md-offset-2">
+           <a class="btn btn-primary" href="">Consultar Viajeros</a>
+       </div>
+
+       <div class="col-md-2 col-md-offset-1">
+           <a class="btn btn-primary" href="">Consultar Viajes</a>
+       </div>
+
+       <div class="col-md-2 col-md-offset-1">
+           <a class="btn btn-primary" href="">Consultar Origenes</a>
+       </div>
+   </div><br>
+
+
+   <div class="row">
+       <div class="col-md-2 col-md-offset-2">
+           <a class="btn btn-primary" href="">Consultar Destinos</a>
+       </div>
+   </div><br>
+
+
+
 </div>
 @endsection

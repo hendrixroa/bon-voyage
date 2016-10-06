@@ -18,6 +18,8 @@ class CreateViajesTable extends Migration
             $table->increments('id');
             $table->string('cod_viajes');
             $table->integer('num_plazas');
+            $table->integer('origen_id')->unsigned();;
+            $table->integer('destino_id')->unsigned();
             $table->date('fecha_viajes');
             $table->integer('viajero_id')->unsigned();
             $table->timestamps();

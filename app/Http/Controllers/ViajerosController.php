@@ -25,11 +25,11 @@ class ViajerosController extends Controller
 
     	if($viajero->save()){
     		//para retornar el json
-    		return response()->json($viajero);
+    		return "Viajero guardado con exito";
     	}
       	else{
 
-        	return Response::make(Utils::renderFault("Error al realizar la operación"), 200);
+        	return "Error no se pudo guardar al viajero";
     	}
     	
     }

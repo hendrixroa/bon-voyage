@@ -13,12 +13,12 @@ class CreateOrigenTable extends Migration
      */
     public function up()
     {
-        Schema::create('origen', function (Blueprint $table) {
+        Schema::create('origens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codigo');
             $table->string('nombre');
             $table->string('lugar');
-            $table->integer('viaje_id')->unsigned();
+            $table->integer('viaje_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateOrigenTable extends Migration
      */
     public function down()
     {
-        Schema::drop('origen');
+        Schema::drop('origens');
     }
 }
