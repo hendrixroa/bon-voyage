@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 use Response;
 use Voyage\Http\Requests;
 use Voyage\Viajeros;
+use DB;
 
 class ViajerosController extends Controller
 {
     public function crear(){
-    	return view('home');
+        $viajeros = DB::table('viajeros')->get();
+        $viajes = DB::table('viajes')->get();
+        $origenes = DB::table('origens')->get();
+        $destinos = DB::table('destinos')->get();
+    	return view('home')->with('viajeros',$viajeros)->with('viajes',$viajes)->with('origenes',$origenes)->with('destinos',$destinos);
     }
 
     public function storeviajero(){
@@ -37,5 +42,10 @@ class ViajerosController extends Controller
     public function getviajeros(){
         $viajeros = DB::table('viajeros')->get();
         return response()->json($viajeros);
+    }
+
+    public function deleteviajero(){
+      $deleted = Viajeros::where('id', Input::get('viajero'))->delete();
+      return "Eliminado con exito";
     }
 }

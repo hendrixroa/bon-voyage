@@ -38,4 +38,9 @@ class OrigenController extends Controller
         $origenes = DB::table('origens')->get();
         return response()->json($origenes);
     }
+
+    public function deleteorigen(){
+      $deleted = Origen::where('id', Input::get('origen'))->delete();
+      return "Eliminado con exito";
+    }
 }

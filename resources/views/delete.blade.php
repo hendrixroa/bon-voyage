@@ -5,7 +5,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Eliminar</div>
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/storeviajes') }}">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/deleteviajero') }}">
                  {{ csrf_field() }}
                     <label for="viajero" class="col-md-4 control-label">Viajeros</label>
                          <select name="viajero" id="viajero" class="form-control">
@@ -18,7 +18,7 @@
                     </button>
                 </form><br>
 
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/storeviajes') }}">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/deleteviaje') }}">
                  {{ csrf_field() }}
                     <label for="viajes" class="col-md-4 control-label">Viajes</label>
                          <select name="viajes" id="viajes" class="form-control">
@@ -31,12 +31,12 @@
                     </button>
                 </form><br>
 
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/storeviajes') }}">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/deleteorigen') }}">
                  {{ csrf_field() }}
                     <label for="origen" class="col-md-4 control-label">Origenes</label>
                          <select name="origen" id="origen" class="form-control">
                                     @foreach($origenes as $origen)
-                                    <option value="{{ $origen->id }}">{{ $origen->nombre }}</option>
+                                    <option value="{{ $origen->id }}">{{ $origen->lugar }}</option>
                                     @endforeach
                         </select><br>
                     <button type="submit" class="btn btn-primary">
@@ -44,12 +44,12 @@
                     </button>
                 </form><br>
 
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/storeviajes') }}">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/deletedestino') }}">
                  {{ csrf_field() }}
                     <label for="destino" class="col-md-4 control-label">Destino</label>
                          <select name="destino" id="destino" class="form-control">
                                     @foreach($destinos as $destino)
-                                    <option value="{{ $destino->id }}">{{ $destino->nombre }}</option>
+                                    <option value="{{ $destino->id }}">{{ $destino->lugar }}</option>
                                     @endforeach
                         </select><br>
                     <button type="submit" class="btn btn-primary">

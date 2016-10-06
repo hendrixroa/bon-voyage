@@ -40,4 +40,9 @@ class DestinoController extends Controller
         return response()->json($destinos);
     }
 
+    public function deletedestino(){
+      $deleted = Destino::where('id', Input::get('destino'))->delete();
+      return "Eliminado con exito";
+    }
+
 }
