@@ -3,7 +3,8 @@
 namespace Voyage\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
+use Illuminate\Contracts\Validation\Validator;
 use Voyage\Http\Requests;
 use DB;
 use Voyage\Viajes;
@@ -25,6 +26,7 @@ class ViajesController extends Controller
        $viaje->fecha_viajes = $data['fecha_viajes'];
        $viaje->viajero_id = $data['viajero']; 
        $viaje->destino_id = $data['destino'];
+       $viaje->origen_id = $data['origen'];
 
        if($viaje->save()){
        		return "Viaje guardado con exito";

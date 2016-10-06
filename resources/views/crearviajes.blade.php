@@ -5,7 +5,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Crear Viajes</div>
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('/storeviajero') }}">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/storeviajes') }}">
                  {{ csrf_field() }}
                     <input type="text" name="cod_viajes" placeholder="Codigo del viaje"><br>
                     <input type="text" name="num_plazas" placeholder="Numero de plazas"><br>
@@ -13,7 +13,7 @@
                     <label for="viajero" class="col-md-4 control-label">Viajero</label>
                          <select name="viajero" id="viajero" class="form-control">
                                     @foreach($viajeros as $viajero)
-                                    <option value="{{ $viajero->id }}">{{ $viajero->lugar }}</option>
+                                    <option value="{{ $viajero->id }}">{{ $viajero->nombre }}</option>
                                     @endforeach
                         </select><br>
                         <label for="origen" class="col-md-4 control-label">Origen</label>
