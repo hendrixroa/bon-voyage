@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 06, 2016 at 01:15 PM
+-- Generation Time: Oct 06, 2016 at 01:27 PM
 -- Server version: 5.5.52-0+deb8u1
 -- PHP Version: 5.6.24-0+deb8u1
 
@@ -159,7 +159,15 @@ CREATE TABLE IF NOT EXISTS `viajes` (
   `viajero_id` int(10) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `viajes`
+--
+
+INSERT INTO `viajes` (`id`, `cod_viajes`, `num_plazas`, `origen_id`, `destino_id`, `fecha_viajes`, `viajero_id`, `created_at`, `updated_at`) VALUES
+(1, '345', 6, 1, 1, '09/03/2016', 1, '2016-10-06 21:26:31', '2016-10-06 21:26:31'),
+(2, '765', 8, 2, 2, '19/03/2017', 2, '2016-10-06 21:26:57', '2016-10-06 21:26:57');
 
 --
 -- Indexes for dumped tables
@@ -229,7 +237,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `viajes`
 --
 ALTER TABLE `viajes`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

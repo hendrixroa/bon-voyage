@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Contracts\Validation\Validator;
 use Response;
 use Voyage\Destino;
+use DB;
 
 use Voyage\Http\Requests;
 
@@ -32,6 +33,11 @@ class DestinoController extends Controller
     		return "Error al guardar el destino";
     	}
 
+    }
+
+    public function getdestinos(){
+        $destinos = DB::table('destinos')->get();
+        return response()->json($destinos);
     }
 
 }

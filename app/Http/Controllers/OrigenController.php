@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Contracts\Validation\Validator;
 use Response;
 use Voyage\Origen;
-
+use DB;
 use Voyage\Http\Requests;
 
 class OrigenController extends Controller
@@ -32,5 +32,10 @@ class OrigenController extends Controller
     		return "Error al guardar el origen";
     	}
 
+    }
+
+    public function getorigenes(){
+        $origenes = DB::table('origens')->get();
+        return response()->json($origenes);
     }
 }

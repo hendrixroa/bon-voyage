@@ -33,4 +33,9 @@ class ViajerosController extends Controller
     	}
     	
     }
+
+    public function getviajeros(){
+        $viajeros = DB::table('viajeros')->get();
+        return response()->json($viajeros);
+    }
 }

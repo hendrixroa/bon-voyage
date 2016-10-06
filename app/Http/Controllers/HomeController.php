@@ -3,26 +3,16 @@
 namespace Voyage\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Voyage\Http\Requests;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('home');
+    public function delete(){
+    	$viajeros = DB::table('viajeros')->get();
+    	$origenes = DB::table('origens')->get();
+    	$destinos = DB::table('destinos')->get();
+    	$viajes = DB::table('viajes')->get();
+    	return view('delete')->with('viajeros',$viajeros)->with('origenes',$origenes)->with('destinos',$destinos)->with('viajes',$viajes);
     }
 }

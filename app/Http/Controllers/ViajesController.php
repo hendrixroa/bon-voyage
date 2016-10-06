@@ -34,4 +34,9 @@ class ViajesController extends Controller
        		return "Vieje no guardado";
        } 
     }
+
+    public function getviajes(){
+        $viajes = DB::table('viajes')->get();
+        return response()->json($viajes);
+    }
 }

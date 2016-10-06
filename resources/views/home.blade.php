@@ -34,22 +34,25 @@
 
    <div class="row">
        <div class="col-md-2 col-md-offset-2">
-           <a class="btn btn-primary" href="">Consultar Viajeros</a>
+           <a class="btn btn-primary" href="{{ url('/getviajeros') }}">Consultar Viajeros</a>
        </div>
 
        <div class="col-md-2 col-md-offset-1">
-           <a class="btn btn-primary" href="">Consultar Viajes</a>
+           <a class="btn btn-primary" href="{{ url('/getviajes') }}">Consultar Viajes</a>
        </div>
 
        <div class="col-md-2 col-md-offset-1">
-           <a class="btn btn-primary" href="">Consultar Origenes</a>
+           <a class="btn btn-primary" href="{{ url('/getorigenes') }}">Consultar Origenes</a>
        </div>
    </div><br>
 
 
    <div class="row">
        <div class="col-md-2 col-md-offset-2">
-           <a class="btn btn-primary" href="">Consultar Destinos</a>
+           <a class="btn btn-primary" href="{{ url('/getdestinos') }}">Consultar Destinos</a>
+       </div>
+       <div class="col-md-2 col-md-offset-2">
+           <a class="btn btn-primary" href="{{ url('/delete') }}">Eliminar Instancias</a>
        </div>
    </div><br>
 
